@@ -9,8 +9,7 @@
 
 		<link rel="stylesheet" href="style.css">
 
-		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<script src="script.js" defer></script>
 	</head>
 
 	<body>
@@ -36,11 +35,11 @@
 							<span class="material-icons-round icon">history</span>
 							<p class="item__text">History</p>
 						</li>
-						<li class="menu__list__item" tabindex="5">
+						<li class="menu__list__item" tabindex="5" onclick="saveArticle(window.location.href, 'Blomma')">
 							<span class="material-icons-round icon">star_border</span>
 							<p class="item__text">Save</p>
 						</li>
-						<li class="menu__list__item" onclick="alert('Search...')">
+						<li class="menu__list__item" tabindex="6" onclick="toggleModal('search-modal')">
 							<span class="material-icons-round icon">search</span>
 							<p class="item__text">Search</p>
 						</li>
@@ -52,8 +51,13 @@
 			<div class="hero"></div>
 
 			<div class="content">
-				<h1>Blomma</h1>
+				<h1 id="title">Blomma</h1>
 			</div>
 		</main>
+
+		<!-- Modals -->
+		<div class="modal search" id="search-modal" onclick="javascript:this.classList.remove('open')">
+			<input type="text" placeholder="Search..." id="search" autocomplete="off" onfocus="this.select()" onclick="javascript:event.cancelBubble = true; if (event.stopPropagation) event.stopPropagation();">
+		</div>
 	</body>
 </html>

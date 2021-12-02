@@ -10,7 +10,7 @@
   --logo-size: 2.5rem;
   /*__% av navbarens height*/
   --logo-color: #f26c64;
-  --hero-height: clamp(10rem, 60vh, 30rem);
+  --hero-height: max(55vh, 15rem);
   --hero-margin: 3.5rem;
   --content-width: 60%
 ;
@@ -118,6 +118,57 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.modal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal input {
+  width: 25rem;
+  height: 5rem;
+  padding: .2rem 1.5rem;
+  background: var(--background-color);
+  font-family: 'Source Sans Pro',sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  border: 2px solid var(--background-color);
+  outline: none;
+  border-radius: 1rem;
+  -webkit-transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.modal input:hover {
+  border: 2px solid #333;
+}
+
+.modal input:focus {
+  border: 3px solid black;
 }
 
 .logo {

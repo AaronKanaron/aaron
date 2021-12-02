@@ -16,7 +16,7 @@
 	--logo-color: #f26c64;
 
 	//Main Configuration
-	--hero-height: clamp(10rem, 60vh, 30rem);
+	--hero-height: max(55vh, 15rem);
 	--hero-margin: 3.5rem;
 
 	--content-width: 60%
@@ -107,6 +107,54 @@ body{
 
 .icon{
 	user-select: none;
+}
+
+.modal{
+	position: fixed;
+	top: 0; left: 0;
+	width: 100vw; height: 100vh;
+	background-color: rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	opacity: 0;
+	pointer-events: none;
+	cursor: pointer;
+
+	transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	&.open{
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	input{
+		width: 25rem;
+		height: 5rem;
+		padding: .2rem 1.5rem;
+
+		background: var(--background-color);
+
+		//Typography
+		font-family: 'Source Sans Pro',sans-serif;
+		font-weight: 400;
+		font-size: 1.5rem;
+
+		border: 2px solid var(--background-color);
+		outline: none;
+		border-radius: 1rem;
+
+		transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+		&:hover{
+			border: 2px solid #333;
+		}
+
+		&:focus{
+			border: 3px solid black;
+		}
+	}
 }
 
 
