@@ -1,0 +1,236 @@
+ @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300&family=Libre+Caslon+Text&family=Source+Sans+Pro:wght@300;400;700&family=Varela+Round&display=swap');
+ @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Round");
+ @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+ :root{
+	--background-color: #ffffff;
+	--primary-text-color: #000000;
+
+	//Navbar Configuration
+	--navbar-height: 8rem;
+	--navbar-width: 85%;
+
+	--menu-item-color: #333;
+
+	--logo-size: 2.5rem; /*__% av navbarens height*/
+	--logo-color: #f26c64;
+
+	//Main Configuration
+	--hero-height: clamp(10rem, 40vh, 30rem);
+	--hero-margin: 4rem;
+}
+
+
+
+
+
+html,body{
+	height: 100%; width: 100%;
+	margin: 0;
+	padding: 0;
+
+	background-color: var(--background-color);
+}
+
+body{
+	color: var(--primary-text-color)
+}
+
+
+.nav{
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%; height: var(--navbar-height);
+
+	display: flex;
+	justify-content: center;
+
+	background-color: rgb(246, 245, 245);
+
+
+	&__content{
+		width: var(--navbar-width);
+		height: 100%;
+		// background-color: blue;
+
+		display: flex;
+		align-items: center;
+	}
+
+	.menu{
+		// background: red;
+		width: 100%; height: 100%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&__list{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			list-style: none;
+
+			padding: 0;
+			margin: 0;
+
+			gap: 3rem;
+
+			&__item{
+				display: flex;
+				align-items: center;
+				gap: .3rem;
+				cursor: pointer;
+				color: var(--menu-item-color);
+				.icon{
+					font-size: 1.6rem;
+				}
+
+				.item__text{
+					font-family: 'Varela Round',sans-serif;
+					letter-spacing: -0.03rem;
+					font-weight: 400;
+					font-size: 1.2rem;
+					user-select: none;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+
+.icon{
+	user-select: none;
+}
+
+
+.logo{
+	height: var(--logo-size); width: min-content;
+	// background-color: green;
+	position: absolute;
+	&__link{
+		
+		height: 100%; width: 100%;
+
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+
+		gap: .5rem;
+
+		&--image{
+			height: 100%;
+		}
+
+		&--text{
+			font-family: 'Varela Round', sans-serif;
+			font-size: 200%;
+			font-weight: 700;
+
+			// display: none; //Make hidden on small resolutions
+			opacity: 0;
+			user-select: none;
+			transition: opacity 0.2s ease;
+
+			margin: 0;
+
+			color: var(--logo-color);
+		}
+	}
+
+	@media only screen and (min-width: 1800px) {
+		&__link--text{
+			display: block;
+			opacity: 1;
+		}
+	}
+}
+
+
+@media only screen and (max-width: 660px) {
+	.item__text{
+		display: none;
+	}
+}
+
+main{
+	width: 100%;
+	
+	margin-top: var(--navbar-height); //make main content under navbar
+
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+
+	.hero{
+		width: 100vw;
+		height: var(--hero-height);
+
+		margin-bottom: var(--hero-margin);
+
+		//background properties
+		background-image: url(https://www.forskning.se/wp-content/uploads/2016/11/havangsdosen.jpg);
+		background-size: cover;
+		background-position: center center;
+	}
+}
+
+
+h1{
+	font-family: 'Playfair Display',
+	serif;
+	font-size: 3.8rem;
+	font-weight: 100;
+	color: var(--primary-text-color);
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .gradient-container {
+// 	width: 100vw;
+// 	height: 100vh;
+// 	position: absolute;
+// 	overflow: hidden;
+// 	z-index: -2;
+// 	top: 0;
+// 	left: 0;
+// }
+
+// #gradient {
+// 	z-index: -1;
+// 	position: absolute;
+// 	width: 100%;
+// 	height: 60%;
+// 	transform: rotate(-10deg) scale(2) translateY(-45%);
+// 	--gradient-color-1: #ef008f;
+// 	--gradient-color-2: #6ec3f4;
+// 	--gradient-color-3: #7038ff;
+// 	--gradient-color-4: #ffba27;
+// 	--gradient-speed: 0.00001;
+// }
