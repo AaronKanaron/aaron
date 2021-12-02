@@ -2,7 +2,7 @@
  @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Round");
  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
- :root{
+:root{
 	--background-color: #ffffff;
 	--primary-text-color: #000000;
 
@@ -16,8 +16,10 @@
 	--logo-color: #f26c64;
 
 	//Main Configuration
-	--hero-height: clamp(10rem, 40vh, 30rem);
-	--hero-margin: 4rem;
+	--hero-height: clamp(10rem, 60vh, 30rem);
+	--hero-margin: 3.5rem;
+
+	--content-width: 60%
 }
 
 
@@ -33,7 +35,8 @@ html,body{
 }
 
 body{
-	color: var(--primary-text-color)
+	color: var(--primary-text-color);
+	overflow-x: hidden;
 }
 
 
@@ -45,7 +48,7 @@ body{
 	display: flex;
 	justify-content: center;
 
-	background-color: rgb(246, 245, 245);
+	background-color: var(--background-color);
 
 
 	&__content{
@@ -94,6 +97,8 @@ body{
 					user-select: none;
 					margin: 0;
 				}
+
+		
 			}
 		}
 	}
@@ -147,12 +152,23 @@ body{
 	}
 }
 
+@media only screen and (max-width: 500px) {
 
-@media only screen and (max-width: 660px) {
+	.menu {
+		justify-content: end !important;
+		&__list{
+			gap: 2rem !important;
+		}
+	}
+}
+@media only screen and (max-width: 880px) {
+	
 	.item__text{
 		display: none;
 	}
 }
+
+
 
 main{
 	width: 100%;
@@ -161,6 +177,7 @@ main{
 
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	flex-direction: column;
 
 	.hero{
@@ -170,20 +187,22 @@ main{
 		margin-bottom: var(--hero-margin);
 
 		//background properties
-		background-image: url(https://www.forskning.se/wp-content/uploads/2016/11/havangsdosen.jpg);
+		background-image: url(https://images.unsplash.com/photo-1561126841-3e34af7b2804?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80);
 		background-size: cover;
 		background-position: center center;
+	}
+
+	.content{
+		width: var(--content-width);
 	}
 }
 
 
 h1{
-	font-family: 'Playfair Display',
-	serif;
+	font-family: 'Playfair Display', serif;
 	font-size: 3.8rem;
 	font-weight: 100;
 	color: var(--primary-text-color);
-	text-align: center;
 	margin: 0;
 	padding: 0;
 }

@@ -17,29 +17,32 @@
 		<nav class="nav">
 			<div class="nav__content">
 				<div class="logo">
-					<a class="logo__link" href="index.html">
+					<a class="logo__link" href="index.html" tabindex="1">
 						<img class="logo__link--image" src="images/logo.svg" alt="logo">
 						<p class="logo__link--text">Kanaron</p>
 					</a>
 				</div>
-
 				<div class="menu">
 					<ul class="menu__list">
-						<li class="menu__list__item">
+						<li class="menu__list__item" tabindex="2">
 							<span class="material-icons-round icon">edit</span>
-							<p class="item__text">Hem</p>
+							<p class="item__text">Edit</p>
 						</li>
-						<li class="menu__list__item">
+						<li class="menu__list__item" tabindex="3">
 							<span class="material-icons-round icon">add</span>
 							<p class="item__text">Create</p>
 						</li>
-						<li class="menu__list__item">
+						<li class="menu__list__item" tabindex="4">
 							<span class="material-icons-round icon">history</span>
 							<p class="item__text">History</p>
 						</li>
-						<li class="menu__list__item">
+						<li class="menu__list__item" tabindex="5">
 							<span class="material-icons-round icon">star_border</span>
 							<p class="item__text">Save</p>
+						</li>
+						<li class="menu__list__item" onclick="alert('Search...')">
+							<span class="material-icons-round icon">search</span>
+							<p class="item__text">Search</p>
 						</li>
 					</ul>
 				</div>
@@ -47,9 +50,9 @@
 		</nav>
 		<main>
 			<div class="hero"></div>
-			
+
 			<div class="content">
-				<h1>Stenåldern I Ukraina</h1>
+				<h1>Blomma</h1>
 			</div>
 		</main>
 	</body>

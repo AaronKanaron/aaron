@@ -20,7 +20,11 @@ function date() {
 	return [year, month, day];
 }
 
-
+function randomInt(min,max){
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 
 /*=-------------=*/
@@ -45,8 +49,11 @@ function handleOnThisDayResponse(){
 	if (this.status == 200) {
 		var data = JSON.parse(this.responseText);
 		console.log(data);
+		let index = randomInt(0, data.events.length - 1);
+		document.getElementById("onthisday").appendChild(document.createTextNode(data.events[index].year + ": "));
+		document.getElementById("onthisday").appendChild(document.createTextNode(data.events[index].text));
 
-		var event = document.getElementById("onthisday").appendChild(document.createTextNode(data.events[3].text));
+
 	} else {
 		console.log("Error:", this.status, "/", this.responseText);
 		alert("Error:", this.status, "/", this.responseText);
